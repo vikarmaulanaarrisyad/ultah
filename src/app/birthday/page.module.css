@@ -101,4 +101,15 @@
   .signature {
     font-size: 1.5rem;
   }
+  .promiseCard {
+    padding: 1.5rem;
+    margin-top: 3rem;
+  }
+  .promiseTitle {
+    font-size: 1.6rem;
+  }
+  .promiseText {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 }

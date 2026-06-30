@@ -1,0 +1,78 @@
+.audioContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.musicButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.musicButton:hover {
+  transform: scale(1.1);
+  background: white;
+}
+
+.musicButton.playing {
+  animation: spinSlowly 4s linear infinite;
+  box-shadow: 0 0 20px var(--primary-color);
+}
+
+.tooltip {
+  background: white;
+  color: var(--primary-color);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fadeInOut 2s infinite alternate;
+}
+
+@keyframes spinSlowly {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0.5; transform: translateX(5px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .audioContainer {
+    bottom: 20px;
+    right: 20px;
+  }
+  .musicButton {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  .tooltip {
+    display: none; /* Hide on mobile to save space */
+  }
+}
