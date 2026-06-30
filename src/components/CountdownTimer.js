@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './CountdownTimer.module.css';
 
@@ -15,6 +15,7 @@ export default function CountdownTimer({ targetDate }) {
 
   const [isTension, setIsTension] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const hasTriggeredRef = useRef(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -37,11 +38,16 @@ export default function CountdownTimer({ targetDate }) {
         };
       } else {
         // Countdown finished, trigger animation then redirect
-        if (!isTransitioning) {
-          setIsTransitioning(true);
-          transitionTimer = setTimeout(() => {
+        if (!hasTriggeredRef.current) {
+          hasTriggeredRef.current = true;
+          setIsTransitioning(true); // this triggers re-render for UI
+          
+          // Use a direct timeout outside of the effect's cleanup if possible, 
+          // or just don't put isTransitioning in the deps array.
+          // Since we use router, router is in deps. 
+          setTimeout(() => {
             router.push('/birthday');
-          }, 3000); // 3 seconds fade out
+          }, 3000);
         }
         return null;
       }
@@ -64,9 +70,9 @@ export default function CountdownTimer({ targetDate }) {
 
     return () => {
       clearInterval(timer);
-      if (transitionTimer) clearTimeout(transitionTimer);
+      // Removed clearTimeout so the redirect timeout doesn't get cancelled on cleanup!
     };
-  }, [targetDate, router, isTransitioning]);
+  }, [targetDate, router]);
 
   if (!isClient) {
     return null; // Prevent hydration mismatch
