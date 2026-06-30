@@ -1,0 +1,203 @@
+.container {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: var(--font-playfair);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  max-width: 500px;
+}
+
+/* Jar CSS */
+.jarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.jar {
+  position: relative;
+  width: 180px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.jar:hover {
+  transform: scale(1.05);
+}
+
+.lid {
+  width: 120px;
+  height: 30px;
+  background: #c5a880; /* Cork/wood color */
+  border-radius: 5px 5px 0 0;
+  border: 2px solid #8c7355;
+  z-index: 2;
+  box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2);
+}
+
+.jarBody {
+  width: 180px;
+  height: 210px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  border-top: none;
+  border-radius: 20px 20px 40px 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 20px 0 30px rgba(255, 255, 255, 0.5), 
+              0 15px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jarLabel {
+  background: #fdfbf7;
+  padding: 10px 20px;
+  border: 1px dashed #d4b595;
+  border-radius: 8px;
+  font-family: var(--font-playfair);
+  font-style: italic;
+  font-weight: bold;
+  color: #8c7355;
+  text-align: center;
+  z-index: 3;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transform: rotate(-5deg);
+}
+
+/* Folded Papers Inside */
+.paper1, .paper2, .paper3, .paper4, .paper5 {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background: #ffb3c1;
+  border: 1px solid #ff758f;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.paper1 { bottom: 20px; left: 30px; transform: rotate(15deg); }
+.paper2 { bottom: 15px; right: 25px; transform: rotate(-25deg); background: #ffccd5; }
+.paper3 { bottom: 50px; left: 60px; transform: rotate(45deg); background: #fff0f3; }
+.paper4 { bottom: 70px; right: 40px; transform: rotate(-10deg); }
+.paper5 { bottom: 85px; left: 35px; transform: rotate(80deg); background: #ffccd5; }
+
+.hintText {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  background: rgba(255, 77, 109, 0.1);
+  padding: 8px 20px;
+  border-radius: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+/* Shaking Animation */
+.shaking {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both infinite;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-2px, 0, 0); }
+  20%, 80% { transform: translate3d(3px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
+  40%, 60% { transform: translate3d(5px, 0, 0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Note Area */
+.noteArea {
+  margin-top: 2rem;
+  min-height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingText {
+  color: var(--text-dark);
+  font-style: italic;
+  animation: fadeInOut 1s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.drawnNote {
+  background: #fdfbf7;
+  background-image: repeating-linear-gradient(transparent, transparent 29px, #e2cfc2 29px, #e2cfc2 30px);
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  width: 100%;
+  position: relative;
+  animation: popUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.drawnNote::before {
+  content: '📌';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.noteText {
+  font-family: var(--font-playfair);
+  font-size: 1.4rem;
+  color: #590d22;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@keyframes popUp {
+  0% { transform: translateY(40px) scale(0.8); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .jar {
+    transform: scale(0.9);
+  }
+  .jar:hover {
+    transform: scale(0.95);
+  }
+  .noteText {
+    font-size: 1.2rem;
+  }
+}

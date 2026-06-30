@@ -5,8 +5,12 @@ import LoveTimeline from '../../components/LoveTimeline';
 import OpenWhen from '../../components/OpenWhen';
 import LoveCoupons from '../../components/LoveCoupons';
 import BloomingRose from '../../components/BloomingRose';
+import MemoryJar from '../../components/MemoryJar';
+import LovePadlock from '../../components/LovePadlock';
+import FlyingLantern from '../../components/FlyingLantern';
 import LoveMeter from '../../components/LoveMeter';
 import LoveLetter from '../../components/LoveLetter';
+import FinalSurprise from '../../components/FinalSurprise';
 import styles from './page.module.css';
 
 export default function BirthdayPage() {
@@ -45,6 +49,12 @@ export default function BirthdayPage() {
 
         <BloomingRose />
 
+        <MemoryJar />
+
+        <LovePadlock />
+
+        <FlyingLantern />
+
         <LoveCoupons />
 
         <LoveMeter />
@@ -59,6 +69,8 @@ export default function BirthdayPage() {
         </div>
 
         <LoveLetter />
+
+        <FinalSurprise />
       </div>
     </main>
   );
