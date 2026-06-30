@@ -10,7 +10,7 @@ export default function OpenWhen() {
       id: 1,
       title: "Buka saat Adik sedang rindu Mas...",
       icon: "🥺",
-      message: "Mas juga rindu Adik kok! Jarak atau kesibukan mungkin kadang bikin kita nggak bisa terus bareng, tapi percayalah hati Mas selalu ada di dekat Adik. Langsung chat atau telepon Mas sekarang ya! ❤️"
+      message: "Mas juga rindu Adik kok! Jarak atau kesibukan mungkin kadang bikin kita nggak bisa terus bareng, tapi percayalah hati Mas selalu ada di dekat Adik. Langsung chat Mas sekarang ya! ❤️"
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ export default function OpenWhen() {
       <p className={styles.subtitle}>
         Mas sudah menyiapkan beberapa surat rahasia. Buka sesuai dengan perasaan Adik saat ini ya!
       </p>
-      
+
       <div className={styles.grid}>
         {letters.map((letter) => (
           <div key={letter.id} className={styles.envelopeCard} onClick={() => setActiveLetter(letter)}>
