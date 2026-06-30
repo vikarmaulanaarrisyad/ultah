@@ -44,7 +44,7 @@ Selamat ulang tahun, cintaku. Mari kita ciptakan lebih banyak kenangan indah ber
           >
             <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>✕</button>
             <div className={styles.paper}>
-              <p className={styles.salutation}>Teruntuk Emi Fatikha Sayang,</p>
+              <p className={styles.salutation}>Teruntuk Adik Tersayang,</p>
               
               <div className={styles.letterBody}>
                 {displayedText.split('\n\n').map((paragraph, idx) => (

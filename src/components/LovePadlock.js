@@ -1,15 +1,25 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './LovePadlock.module.css';
 
 export default function LovePadlock() {
   const [isLocked, setIsLocked] = useState(false);
   const [showHearts, setShowHearts] = useState(false);
 
+  useEffect(() => {
+    // Check local storage on initial load
+    const savedState = localStorage.getItem('lovePadlockLocked');
+    if (savedState === 'true') {
+      setIsLocked(true);
+    }
+  }, []);
+
   const handleLock = () => {
     if (isLocked) return;
+    
     setIsLocked(true);
     setShowHearts(true);
+    localStorage.setItem('lovePadlockLocked', 'true');
     
     // Hide hearts after animation
     setTimeout(() => {

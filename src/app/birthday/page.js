@@ -20,7 +20,7 @@ export default function BirthdayPage() {
       
       <div className={styles.content}>
         <div className={`glass-panel ${styles.greetingCard}`}>
-          <h1 className={styles.title}>Selamat Ulang Tahun, Emi Fatikha!</h1>
+          <h1 className={styles.title}>Selamat Ulang Tahun, Adik Tersayang!</h1>
           
           <div className={styles.message}>
             <p>

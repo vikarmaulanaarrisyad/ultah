@@ -24,7 +24,7 @@ export default function BloomingRose() {
     {
       emoji: "🌹",
       title: "Mekar Sepenuhnya Untuk Adik Sayang!",
-      desc: "Bunga ini melambangkan cinta Mas yang sudah mekar sempurna dan hanya dipersembahkan untuk Emi Fatikha seorang. ❤️"
+      desc: "Bunga ini melambangkan cinta Mas yang sudah mekar sempurna dan hanya dipersembahkan untuk Adik Tersayang seorang. ❤️"
     }
   ];
 
