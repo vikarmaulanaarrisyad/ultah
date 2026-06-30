@@ -1,5 +1,8 @@
 import FloatingHearts from '../../components/FloatingHearts';
 import PhotoAlbum from '../../components/PhotoAlbum';
+import ReasonsToLove from '../../components/ReasonsToLove';
+import LoveTimeline from '../../components/LoveTimeline';
+import LoveLetter from '../../components/LoveLetter';
 import styles from './page.module.css';
 
 export default function BirthdayPage() {
@@ -29,6 +32,12 @@ export default function BirthdayPage() {
         </div>
 
         <PhotoAlbum />
+        
+        <ReasonsToLove />
+
+        <LoveTimeline />
+
+        <LoveLetter />
       </div>
     </main>
   );
