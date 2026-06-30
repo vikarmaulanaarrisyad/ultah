@@ -26,7 +26,7 @@ export default function ReasonsToLove() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>10 Alasan Mas Mencintai Adik</h2>
+      <h2 className={styles.title}>Mas Mencintai Adik</h2>
       <p className={styles.subtitle}>Sentuh kartunya untuk membuka rahasia...</p>
       
       <div className={styles.grid}>

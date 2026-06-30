@@ -1,0 +1,93 @@
+.container {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.heartWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(255, 77, 109, 0.05);
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  touch-action: none; /* crucial to prevent page scroll on mobile */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.heartWrapper.active {
+  background: rgba(255, 77, 109, 0.15);
+  box-shadow: 0 0 40px rgba(255, 77, 109, 0.4), inset 0 0 20px rgba(255, 77, 109, 0.2);
+}
+
+.heart {
+  font-size: 6rem;
+  filter: drop-shadow(0 5px 15px rgba(255, 77, 109, 0.5));
+  transition: transform 0.1s;
+}
+
+.heartWrapper:not(.active) .heart {
+  animation: idlePulse 2s infinite;
+}
+
+.heartWrapper.active .heart {
+  animation: fastPulse 0.8s infinite;
+}
+
+@keyframes idlePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fastPulse {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.2); filter: drop-shadow(0 0 20px rgba(255,0,0,0.8)); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.25); filter: drop-shadow(0 0 30px rgba(255,0,0,1)); }
+  100% { transform: scale(1); }
+}
+
+.instruction {
+  margin-top: 1.5rem;
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.message {
+  margin-top: 3rem;
+  text-align: center;
+  font-family: var(--font-playfair);
+  font-size: 1.8rem;
+  color: #a01a58;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  font-weight: bold;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  line-height: 1.5;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .message {
+    font-size: 1.4rem;
+  }
+}
