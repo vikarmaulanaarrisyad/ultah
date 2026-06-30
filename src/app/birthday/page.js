@@ -37,6 +37,15 @@ export default function BirthdayPage() {
 
         <LoveTimeline />
 
+        <div className={`glass-panel ${styles.promiseCard}`}>
+          <h2 className={styles.promiseTitle}>Janji Mas Untuk Adik 💍</h2>
+          <p className={styles.promiseText}>
+            "Mas berjanji akan selalu berusaha menjadi alasan Adik tersenyum setiap harinya. 
+            Mas akan menggenggam tangan Adik di saat senang maupun susah, mendengarkan segala keluh kesah Adik, 
+            dan mencintai Adik dengan cara yang paling sederhana namun paling tulus yang Mas bisa."
+          </p>
+        </div>
+
         <LoveLetter />
       </div>
     </main>
