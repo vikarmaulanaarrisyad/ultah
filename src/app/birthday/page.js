@@ -2,6 +2,7 @@ import FloatingHearts from '../../components/FloatingHearts';
 import PhotoAlbum from '../../components/PhotoAlbum';
 import Storybook from '../../components/Storybook';
 import FlashlightMessage from '../../components/FlashlightMessage';
+import SunriseSlider from '../../components/SunriseSlider';
 import GoldenTicket from '../../components/GoldenTicket';
 import ReasonsToLove from '../../components/ReasonsToLove';
 import LoveTimeline from '../../components/LoveTimeline';
@@ -47,6 +48,8 @@ export default function BirthdayPage() {
         <Storybook />
 
         <FlashlightMessage />
+
+        <SunriseSlider />
 
         <ReasonsToLove />
 
