@@ -83,7 +83,7 @@
 
 .cardBack {
   background: white;
-  color: var(--text-dark);
+  color: #590d22; /* Fixed dark color for readability on white background */
   transform: rotateY(180deg);
   border: 2px solid var(--primary-color);
   font-size: 1rem;

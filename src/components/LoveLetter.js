@@ -23,7 +23,7 @@ export default function LoveLetter() {
           >
             <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>✕</button>
             <div className={styles.paper}>
-              <p className={styles.salutation}>Teruntuk Adikku Sayang,</p>
+              <p className={styles.salutation}>Teruntuk Emi Fatikha Sayang,</p>
               
               <div className={styles.letterBody}>
                 <p>
@@ -44,8 +44,8 @@ export default function LoveLetter() {
               </div>
 
               <p className={styles.closing}>
-                Peluk hangat, <br/>
-                <strong>Mas</strong> ❤️
+                Peluk hangat dari Mas,<br/>
+                <strong>Vikar Maulana Arrisyad</strong> ❤️
               </p>
             </div>
           </div>

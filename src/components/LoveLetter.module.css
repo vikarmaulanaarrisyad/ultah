@@ -95,7 +95,7 @@
 .salutation {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: var(--text-dark);
+  color: #590d22; /* Fixed dark color for light background */
 }
 
 .letterBody p {
@@ -103,6 +103,7 @@
   text-indent: 2rem;
   font-family: var(--font-inter);
   font-size: 1.1rem;
+  color: #4a4a4a;
 }
 
 .closing {
@@ -111,7 +112,7 @@
   font-size: 1.5rem;
   font-family: var(--font-playfair);
   font-style: italic;
-  color: var(--text-dark);
+  color: #590d22; /* Fixed dark color for light background */
 }
 
 @keyframes slideUpLetter {
