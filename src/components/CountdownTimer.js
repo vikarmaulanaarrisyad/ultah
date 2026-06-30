@@ -83,6 +83,12 @@ export default function CountdownTimer({ targetDate }) {
           <span className={styles.label}>Detik</span>
         </div>
       </div>
+      
+      <div className={styles.teaserText}>
+        <p>Tersenyumlah, ada sebuah kejutan istimewa yang sedang menunggumu saat waktunya tiba nanti.</p>
+        <p>Sesuatu yang disiapkan khusus untuk wanita paling spesial di hati Mas.</p>
+        <p className={styles.teaserSignature}>Dari: Vikar Maulana Arrisyad ❤️</p>
+      </div>
     </div>
   );
 }
