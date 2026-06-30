@@ -2,6 +2,8 @@ import FloatingHearts from '../../components/FloatingHearts';
 import PhotoAlbum from '../../components/PhotoAlbum';
 import ReasonsToLove from '../../components/ReasonsToLove';
 import LoveTimeline from '../../components/LoveTimeline';
+import OpenWhen from '../../components/OpenWhen';
+import LoveCoupons from '../../components/LoveCoupons';
 import LoveLetter from '../../components/LoveLetter';
 import styles from './page.module.css';
 
@@ -37,11 +39,15 @@ export default function BirthdayPage() {
 
         <LoveTimeline />
 
+        <OpenWhen />
+
+        <LoveCoupons />
+
         <div className={`glass-panel ${styles.promiseCard}`}>
-          <h2 className={styles.promiseTitle}>Janji Mas Untuk Adik 💍</h2>
+          <h2 className={styles.promiseTitle}>Dari Hati Mas Untuk Adik 💍</h2>
           <p className={styles.promiseText}>
-            "Mas berjanji akan selalu berusaha menjadi alasan Adik tersenyum setiap harinya. 
-            Mas akan menggenggam tangan Adik di saat senang maupun susah, mendengarkan segala keluh kesah Adik, 
+            "Mas akan selalu berusaha menjadi alasan Adik tersenyum setiap harinya. 
+            Mas akan terus menggenggam tangan Adik di saat senang maupun susah, mendengarkan segala keluh kesah Adik, 
             dan mencintai Adik dengan cara yang paling sederhana namun paling tulus yang Mas bisa."
           </p>
         </div>
