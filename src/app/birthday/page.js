@@ -13,18 +13,18 @@ export default function BirthdayPage() {
           
           <div className={styles.message}>
             <p>
-              Hari ini adalah hari yang sangat spesial. Bukan hanya untukmu, tapi juga untukku, 
-              karena di hari inilah seseorang yang sangat berarti bagiku dilahirkan ke dunia.
+              Hari ini adalah hari yang sangat spesial. Bukan hanya untuk Adik, tapi juga untuk Mas, 
+              karena di hari inilah seseorang yang sangat berarti bagi Mas dilahirkan ke dunia.
             </p>
             <p>
-              Terima kasih sudah menjadi bagian terindah dalam hidupku. 
-              Semoga di umurmu yang baru ini, kamu selalu diberikan kebahagiaan, 
-              kesehatan, dan semua impianmu dapat terwujud.
+              Terima kasih sudah menjadi bagian terindah dalam hidup Mas. 
+              Semoga di umur Adik yang baru ini, Adik selalu diberikan kebahagiaan, 
+              kesehatan, dan semua impian Adik dapat terwujud.
             </p>
             <p>
-              Aku akan selalu ada di sini, mendukungmu dan mencintaimu di setiap langkahmu.
+              Mas akan selalu ada di sini, mendukung Adik dan mencintai Adik di setiap langkah Adik.
             </p>
-            <p className={styles.signature}>With all my love, <br/> Your Love ❤️</p>
+            <p className={styles.signature}>With all my love, <br/> Mas ❤️</p>
           </div>
         </div>
 
