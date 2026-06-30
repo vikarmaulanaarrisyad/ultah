@@ -1,5 +1,6 @@
 import FloatingHearts from '../../components/FloatingHearts';
 import PhotoAlbum from '../../components/PhotoAlbum';
+import Storybook from '../../components/Storybook';
 import ReasonsToLove from '../../components/ReasonsToLove';
 import LoveTimeline from '../../components/LoveTimeline';
 import OpenWhen from '../../components/OpenWhen';
@@ -41,6 +42,8 @@ export default function BirthdayPage() {
 
         <PhotoAlbum />
         
+        <Storybook />
+
         <ReasonsToLove />
 
         <LoveTimeline />
