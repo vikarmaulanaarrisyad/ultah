@@ -4,6 +4,8 @@ import ReasonsToLove from '../../components/ReasonsToLove';
 import LoveTimeline from '../../components/LoveTimeline';
 import OpenWhen from '../../components/OpenWhen';
 import LoveCoupons from '../../components/LoveCoupons';
+import BloomingRose from '../../components/BloomingRose';
+import LoveMeter from '../../components/LoveMeter';
 import LoveLetter from '../../components/LoveLetter';
 import styles from './page.module.css';
 
@@ -41,7 +43,11 @@ export default function BirthdayPage() {
 
         <OpenWhen />
 
+        <BloomingRose />
+
         <LoveCoupons />
+
+        <LoveMeter />
 
         <div className={`glass-panel ${styles.promiseCard}`}>
           <h2 className={styles.promiseTitle}>Dari Hati Mas Untuk Adik 💍</h2>

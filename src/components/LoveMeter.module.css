@@ -1,0 +1,163 @@
+.container {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: var(--font-playfair);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.meterWrapper {
+  display: flex;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  gap: 3rem;
+  box-shadow: 0 8px 30px rgba(255, 77, 109, 0.15);
+  align-items: center;
+}
+
+/* Thermometer CSS */
+.thermometer {
+  position: relative;
+  width: 40px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.glass {
+  width: 30px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 3px solid #ccc;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.fluid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, #c9184a, #ff4d6d);
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bulb {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff4d6d, #c9184a);
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.3);
+}
+
+/* Info Area */
+.infoArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+  align-items: center;
+}
+
+.percentageText {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  font-family: var(--font-playfair);
+  line-height: 1;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
+}
+
+.statusMessage {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  height: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.tapButton {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+  transition: all 0.1s ease;
+}
+
+.tapButton:active {
+  transform: scale(0.95);
+  background: #c9184a;
+}
+
+.celebration {
+  color: #ff4d6d;
+  font-weight: bold;
+  font-size: 1.2rem;
+  animation: bounce 1s infinite;
+}
+
+/* Shake Animation when broken */
+.shake {
+  animation: shakeEffect 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shakeEffect {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 600px) {
+  .meterWrapper {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+  .thermometer {
+    transform: rotate(-90deg); /* Make it horizontal on small screens! */
+    height: 180px;
+    margin: 20px 0;
+  }
+}
