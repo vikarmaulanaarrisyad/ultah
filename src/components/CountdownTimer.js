@@ -60,7 +60,7 @@ export default function CountdownTimer({ targetDate }) {
 
   return (
     <div className={`glass-panel ${styles.countdownContainer}`}>
-      <h2 className={styles.title}>Menunggu Hari Bahagia Adik Tersayang...</h2>
+      <h2 className={styles.title}>Sebuah Rahasia Akan Terbuka Dalam...</h2>
       
       <div className={styles.timeWrapper}>
         <div className={styles.timeBox}>
