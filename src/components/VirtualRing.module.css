@@ -1,0 +1,133 @@
+.container {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: var(--font-playfair);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 4rem;
+  font-size: 1.1rem;
+}
+
+.ringScene {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.ringBox {
+  position: relative;
+  width: 120px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.ringScene:hover .ringBox {
+  transform: scale(1.05);
+}
+
+.boxBase {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to right, #800020, #a52a2a, #800020); /* Velvet red */
+  border-radius: 10px 10px 15px 15px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.4), inset 0 5px 15px rgba(0,0,0,0.5);
+  z-index: 3;
+}
+
+.boxLid {
+  position: absolute;
+  bottom: 50px;
+  width: 120px;
+  height: 60px;
+  background: linear-gradient(to right, #900020, #b22222, #900020);
+  border-radius: 20px 20px 5px 5px;
+  transform-origin: bottom center;
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+  z-index: 4;
+}
+
+/* Open State */
+.open .boxLid {
+  transform: rotateX(-120deg) translateY(-20px);
+  z-index: 1; /* Moves behind the ring when opened */
+}
+
+.theRing {
+  position: absolute;
+  bottom: 40px;
+  font-size: 4rem;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(20px) scale(0.5);
+  transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
+}
+
+.glowRing {
+  opacity: 1;
+  transform: translateY(-40px) scale(1);
+  animation: floatAndGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes floatAndGlow {
+  0% { transform: translateY(-35px) scale(1); filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6)); }
+  100% { transform: translateY(-45px) scale(1.1); filter: drop-shadow(0 0 30px rgba(255, 215, 0, 1)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.8)); }
+}
+
+/* Message Area */
+.messageArea {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.5s ease-out;
+  text-align: center;
+  max-width: 500px;
+  pointer-events: none;
+}
+
+.showMsg {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.promiseText {
+  color: var(--text-dark);
+  font-family: var(--font-inter);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.highlightText {
+  color: var(--primary-color);
+  font-family: var(--font-playfair);
+  font-size: 1.6rem;
+  font-weight: bold;
+}

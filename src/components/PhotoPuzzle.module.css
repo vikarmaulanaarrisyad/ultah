@@ -1,0 +1,191 @@
+.container {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: var(--font-playfair);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  max-width: 450px;
+  min-height: 50px;
+}
+
+.boardWrapper {
+  padding: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: all 0.5s ease;
+  margin-bottom: 2rem;
+}
+
+.solvedGlow {
+  box-shadow: 0 0 30px rgba(255, 117, 143, 0.6);
+  transform: scale(1.02);
+}
+
+.puzzleBoard {
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  background: #f0f0f0;
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+  /* 
+    PENTING UNTUK MAS VIKAR:
+    Ganti URL gambar di bawah ini dengan URL foto berdua Mas dan Adik Emi. 
+    Pastikan fotonya berukuran persegi (square 1:1) agar hasilnya bagus.
+  */
+  background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=600&h=600');
+  background-size: 300% 300%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.1s ease;
+  border-radius: 4px;
+}
+
+.tile:hover {
+  filter: brightness(1.1);
+}
+
+.noBorder {
+  border-radius: 0;
+  gap: 0;
+}
+
+.solvedGlow .puzzleBoard {
+  gap: 0; /* merge pieces perfectly when solved */
+}
+
+/* Selection Effect */
+.selected {
+  transform: scale(0.95);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.selectionOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 77, 109, 0.4);
+  border: 3px solid #ff4d6d;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.playBtn {
+  background: linear-gradient(135deg, #ff758f, #ff4d6d);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+  transition: all 0.3s ease;
+}
+
+.playBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.6);
+}
+
+.giveUpBtn {
+  background: transparent;
+  color: #888;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: fit-content;
+}
+
+.giveUpBtn:hover {
+  background: #eee;
+}
+
+.successMessage {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px dashed var(--primary-color);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.successMessage h3 {
+  color: var(--primary-color);
+  font-family: var(--font-playfair);
+  margin-bottom: 0.5rem;
+}
+
+.successMessage p {
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.replayBtn {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.replayBtn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.devNote {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #999;
+  font-style: italic;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 400px) {
+  .puzzleBoard {
+    width: 270px;
+    height: 270px;
+  }
+}
