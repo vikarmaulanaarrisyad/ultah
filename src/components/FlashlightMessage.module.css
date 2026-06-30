@@ -1,0 +1,110 @@
+.container {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: var(--font-playfair);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.flashlightWrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-color: #050505; /* very dark background for text */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  cursor: crosshair;
+  touch-action: none; /* crucial to prevent page scrolling while wiping */
+  /* Default hole position in center before interaction */
+  --x: 50%;
+  --y: -1000px; /* Hide offscreen initially */
+}
+
+.secretText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  text-align: center;
+  color: #fdfdfd;
+  font-family: var(--font-playfair);
+  font-size: 1.4rem;
+  line-height: 1.8;
+  z-index: 1;
+}
+
+.darkMask {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #000000;
+  /* The magic: transparent circle at --x, --y, rest is solid black covering the text */
+  mask-image: radial-gradient(circle 90px at var(--x) var(--y), transparent 0%, black 100%);
+  -webkit-mask-image: radial-gradient(circle 90px at var(--x) var(--y), transparent 0%, black 100%);
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Smooth tracking transition when not active, but immediate when active to prevent lag */
+.darkMask:not(.active) {
+  mask-image: radial-gradient(circle 0px at var(--x) var(--y), transparent 0%, black 100%);
+  -webkit-mask-image: radial-gradient(circle 0px at var(--x) var(--y), transparent 0%, black 100%);
+}
+
+.instruction {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  font-family: var(--font-inter);
+  letter-spacing: 2px;
+  z-index: 3;
+  pointer-events: none;
+  animation: pulse 2s infinite;
+  transition: opacity 0.3s ease;
+}
+
+.instruction.hidden {
+  opacity: 0;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.2; transform: translateY(0); }
+  50% { opacity: 0.7; transform: translateY(-3px); }
+  100% { opacity: 0.2; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .flashlightWrapper {
+    height: 400px; /* more height for mobile text wrapping */
+  }
+  .secretText {
+    font-size: 1.1rem;
+    width: 90%;
+  }
+  .darkMask {
+    mask-image: radial-gradient(circle 70px at var(--x) var(--y), transparent 0%, black 100%);
+    -webkit-mask-image: radial-gradient(circle 70px at var(--x) var(--y), transparent 0%, black 100%);
+  }
+}

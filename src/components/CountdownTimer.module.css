@@ -109,3 +109,39 @@
   0% { opacity: 0.7; transform: translateY(0); }
   100% { opacity: 1; transform: translateY(-3px); }
 }
+
+/* --- TENSION & TRANSITION ANIMATIONS --- */
+.tensionMode {
+  animation: heartbeatTension 1s infinite alternate;
+  box-shadow: 0 0 40px rgba(255, 0, 85, 0.6);
+  border: 1px solid rgba(255, 0, 85, 0.8);
+}
+
+@keyframes heartbeatTension {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.03); }
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1.5s ease-in-out;
+}
+
+.transitionOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2s ease-in;
+}
+
+.transitionOverlay.active {
+  opacity: 1;
+  pointer-events: all;
+}

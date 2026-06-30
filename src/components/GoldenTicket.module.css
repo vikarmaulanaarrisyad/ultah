@@ -1,0 +1,259 @@
+.container {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
+  color: #d4af37; /* Gold color */
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: var(--font-playfair);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.ticketWrapper {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.ticket {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  min-height: 250px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  background-size: 300% 300%;
+  animation: goldShine 6s ease infinite;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3), inset 0 0 10px rgba(255,255,255,0.5);
+  position: relative;
+  overflow: hidden;
+  color: #332100;
+  font-family: 'Courier New', Courier, monospace;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ticket:hover {
+  transform: translateY(-10px) rotateX(10deg) rotateY(5deg);
+  box-shadow: -10px 30px 50px rgba(0,0,0,0.4), inset 0 0 20px rgba(255,255,255,0.7);
+}
+
+@keyframes goldShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Texture overlay for ticket */
+.ticket::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+.ticketLeft {
+  flex: 3;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 2px dashed rgba(0,0,0,0.2);
+}
+
+.ticketHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  border-bottom: 2px solid rgba(0,0,0,0.3);
+  padding-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.flightNo {
+  background: rgba(0,0,0,0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.passengerRow, .routeRow, .detailsRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.routeRow {
+  align-items: center;
+  background: rgba(255,255,255,0.3);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: rgba(51, 33, 0, 0.7);
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+.value {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: var(--font-inter);
+}
+
+.valueSmall {
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: var(--font-inter);
+}
+
+.city {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: var(--font-playfair);
+}
+
+.planeIcon {
+  font-size: 2rem;
+  animation: fly 3s ease-in-out infinite alternate;
+}
+
+@keyframes fly {
+  from { transform: translateX(-10px) translateY(5px); }
+  to { transform: translateX(10px) translateY(-5px); }
+}
+
+.ticketDivider {
+  width: 0px;
+  position: relative;
+}
+
+.holeTop, .holeBottom {
+  width: 30px;
+  height: 30px;
+  background: #111; /* Assuming background is dark */
+  border-radius: 50%;
+  position: absolute;
+  left: -15px;
+}
+
+.holeTop {
+  top: -15px;
+}
+
+.holeBottom {
+  bottom: -15px;
+}
+
+.ticketRight {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.barcodeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(90deg);
+}
+
+.barcode {
+  width: 150px;
+  height: 40px;
+  background-image: 
+    linear-gradient(to right, 
+      #332100 0%, #332100 5%, 
+      transparent 5%, transparent 8%, 
+      #332100 8%, #332100 12%, 
+      transparent 12%, transparent 15%,
+      #332100 15%, #332100 25%,
+      transparent 25%, transparent 27%,
+      #332100 27%, #332100 32%,
+      transparent 32%, transparent 37%,
+      #332100 37%, #332100 40%,
+      transparent 40%, transparent 42%,
+      #332100 42%, #332100 45%,
+      transparent 45%, transparent 55%,
+      #332100 55%, #332100 60%,
+      transparent 60%, transparent 63%,
+      #332100 63%, #332100 70%,
+      transparent 70%, transparent 75%,
+      #332100 75%, #332100 82%,
+      transparent 82%, transparent 85%,
+      #332100 85%, #332100 95%,
+      transparent 95%, transparent 97%,
+      #332100 97%, #332100 100%
+    );
+  margin-bottom: 10px;
+}
+
+.barcodeText {
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.stamp {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 3px solid #ff4d6d;
+  color: #ff4d6d;
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transform: rotate(25deg);
+  opacity: 0.8;
+  font-family: var(--font-inter);
+}
+
+@media (max-width: 650px) {
+  .ticket {
+    flex-direction: column;
+  }
+  .ticketLeft {
+    border-right: none;
+    border-bottom: 2px dashed rgba(0,0,0,0.2);
+  }
+  .ticketDivider {
+    display: none;
+  }
+  .ticketRight {
+    padding: 2rem;
+  }
+  .barcodeBox {
+    transform: rotate(0);
+  }
+}
