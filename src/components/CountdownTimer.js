@@ -118,7 +118,9 @@ export default function CountdownTimer({ targetDate }) {
       </div>
       
       {/* Flash overlay for transition */}
-      <div className={`${styles.transitionOverlay} ${isTransitioning ? styles.active : ''}`}></div>
+      <div className={`${styles.transitionOverlay} ${isTransitioning ? styles.active : ''}`}>
+        <h1 className={styles.transitionText}>Tunggu sebentar...</h1>
+      </div>
     </>
   );
 }
